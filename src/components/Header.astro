@@ -1,0 +1,87 @@
+---
+// You can use JavaScript/TypeScript in the frontmatter
+const navItems = [
+  { label: 'Home', url: '/' },
+  { label: 'About', url: '/about' },
+  { label: 'Projects', url: '/projects' },
+  { label: 'Resume', url: '/resume' },
+  { label: 'Contact', url: '/contact' },
+];
+---
+
+<header class="site-header">
+  <div class="container">
+    <div class="logo">
+      <a href="/">YourName</a>
+    </div>
+    <nav>
+      <ul>
+        {navItems.map((item) => (
+          <li>
+            <a href={item.url}>{item.label}</a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    padding: 1rem 0;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+  }
+  
+  nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav li {
+    margin-left: 1.5rem;
+  }
+  
+  nav a {
+    color: #555;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  nav a:hover {
+    color: #0070f3;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      gap: 1rem;
+    }
+    
+    nav ul {
+      gap: 1rem;
+    }
+    
+    nav li {
+      margin-left: 0;
+    }
+  }
+</style>

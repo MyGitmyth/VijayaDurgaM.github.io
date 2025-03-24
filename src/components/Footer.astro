@@ -1,0 +1,54 @@
+---
+const currentYear = new Date().getFullYear();
+const socialLinks = [
+  { platform: 'GitHub', url: 'https://github.com/yourusername' },
+  { platform: 'LinkedIn', url: 'https://linkedin.com/in/yourusername' },
+  { platform: 'Twitter', url: 'https://twitter.com/yourusername' },
+];
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="social-links">
+      {socialLinks.map((link) => (
+        <a href={link.url} target="_blank" rel="noopener noreferrer">{link.platform}</a>
+      ))}
+    </div>
+    <p class="copyright">© {currentYear} Your Name. All rights reserved.</p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    padding: 2rem 0;
+    background-color: #f5f5f5;
+    margin-top: 3rem;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    text-align: center;
+  }
+  
+  .social-links {
+    margin-bottom: 1rem;
+  }
+  
+  .social-links a {
+    margin: 0 0.5rem;
+    color: #555;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .social-links a:hover {
+    color: #0070f3;
+  }
+  
+  .copyright {
+    font-size: 0.9rem;
+    color: #777;
+  }
+</style>
